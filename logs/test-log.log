@@ -1,0 +1,18 @@
+2025-08-15 14:16:58 INFO  com.framework.listeners.TestListener - ✅ Test Started: testValidLogin
+2025-08-15 14:17:01 INFO  com.framework.listeners.TestListener - ✅ Test Passed: testValidLogin
+2025-08-15 14:21:18 INFO  com.framework.listeners.TestListener - ===== STARTING TEST SUITE: LoginTest =====
+2025-08-15 14:21:20 INFO  com.framework.listeners.TestListener - STARTING TEST: testValidLogin
+2025-08-15 14:21:23 INFO  com.framework.listeners.TestListener - PASSED: testValidLogin
+2025-08-15 14:21:23 INFO  com.framework.listeners.TestListener - ===== FINISHED TEST SUITE: LoginTest =====
+2025-08-15 15:12:36 INFO  com.framework.TestListener - ===== Starting Test Suite: SelProj =====
+2025-08-15 15:12:36 INFO  com.framework.TestListener - ---- Starting Test: LoginTest ----
+2025-08-15 15:12:39 INFO  com.framework.TestListener - ▶ STARTED: tests.LoginTest.testValidLogin
+2025-08-15 15:12:42 INFO  com.framework.TestListener - ✅ PASSED: tests.LoginTest.testValidLogin
+2025-08-15 15:12:42 INFO  com.framework.TestListener - ---- Finished Test: LoginTest ----
+2025-08-15 15:12:42 INFO  com.framework.TestListener - ===== Finished Test Suite: SelProj =====
+2025-08-15 15:15:27 INFO  com.framework.TestListener - ===== Starting Test Suite: SelProj =====
+2025-08-15 15:15:27 INFO  com.framework.TestListener - ---- Starting Test: LoginTest ----
+2025-08-15 15:15:30 INFO  com.framework.TestListener - ▶ STARTED: tests.LoginTest.testValidLogin
+2025-08-15 15:15:33 INFO  com.framework.TestListener - ✅ PASSED: tests.LoginTest.testValidLogin
+2025-08-15 15:15:33 INFO  com.framework.TestListener - ---- Finished Test: LoginTest ----
+2025-08-15 15:15:33 INFO  com.framework.TestListener - ===== Finished Test Suite: SelProj =====
