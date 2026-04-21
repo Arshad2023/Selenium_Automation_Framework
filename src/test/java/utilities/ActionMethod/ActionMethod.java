@@ -30,6 +30,8 @@ public class ActionMethod {
             }
             TestLogger.logPass("Clicked on element: " + element);
         } catch (Exception e) {
+            String screenshot = ScreenshotUtil.getScreenshot(driver);
+            TestLogger.logFailWithScreenshot("Unable to click on element: " + element, screenshot);
             throw new RuntimeException("❌ Failed to click on element: " + element, e);
         }
     }
@@ -45,7 +47,6 @@ public class ActionMethod {
             throw new RuntimeException("❌ Failed to enter text in element: " + element, e);
         }
     }
-
     // Select Dropdown by Value
     public void selectByValue(WebElement element, String value) {
         try {

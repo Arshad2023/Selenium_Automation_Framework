@@ -15,7 +15,6 @@ public class LoginPages extends BasePage {
     public LoginPages(WebDriver driver) {
         super(driver);
     }
-
     @FindBy(xpath = "//a[@id='hrefUserIcon']")
     private WebElement loginIcon;
 

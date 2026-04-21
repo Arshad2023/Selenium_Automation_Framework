@@ -26,5 +26,10 @@ public class TestLogger {
     public static void logFail(String message) {
         if (getTest() != null)
             getTest().fail(message);
+
+    }
+    public static void logFailWithScreenshot(String message, String base64Image) {
+        getTest().fail(message)
+                .addScreenCaptureFromBase64String(base64Image);
     }
 }

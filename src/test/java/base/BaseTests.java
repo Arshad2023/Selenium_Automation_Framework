@@ -29,11 +29,9 @@ public class BaseTests {
         boolean isHeadless = Boolean.parseBoolean(ConfigReader.get("headless"));
 
         WebDriver driver;
-
         switch (browser) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-
                 if (isHeadless) {
                     chromeOptions.addArguments("--headless=new");
                     chromeOptions.addArguments("--window-size=1920,1080");
