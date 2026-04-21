@@ -51,7 +51,6 @@ public class ExcelUtils {
         }
         return false;
     }
-
     /**
      * Returns a map for the row which matches TestCaseID in given sheet.
      * Keys are header names; values are the cell values as String.
@@ -71,7 +70,6 @@ public class ExcelUtils {
             for (int c = 0; c < headerRow.getLastCellNum(); c++) {
                 headers.add(getCellValueAsString(headerRow.getCell(c)).trim());
             }
-
             DataFormatter formatter = new DataFormatter();
             for (int r = 1; r <= sheet.getLastRowNum(); r++) {
                 Row row = sheet.getRow(r);

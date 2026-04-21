@@ -4,6 +4,9 @@ import base.BaseTests;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import io.cucumber.java.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.SkipException;
 import utilities.ExtentManager;
 import utilities.TestLogger;
@@ -57,19 +60,35 @@ public class Hooks {
     public void afterScenario(Scenario scenario) {
 
         ExtentTest extentTest = test.get();
+        WebDriver driver = BaseTests.getDriver();
 
         if (extentTest != null) {
+
             if (scenario.isFailed()) {
+
+                // ✅ Capture screenshot in Cucumber report
+                byte[] screenshot = ((TakesScreenshot) driver)
+                        .getScreenshotAs(OutputType.BYTES);
+
+                scenario.attach(screenshot, "image/png", "Failure Screenshot");
+
+                // ✅ Log failure in Extent Report
                 extentTest.fail("Test Failed: " + scenario.getName());
+
+                extentTest.addScreenCaptureFromBase64String(
+                        java.util.Base64.getEncoder().encodeToString(screenshot),
+                        "Failure Screenshot"
+                );
+
             } else {
                 extentTest.pass("Test Passed: " + scenario.getName());
             }
         }
 
-        // ✅ Quit browser
+        // ✅ Quit browser safely
         BaseTests.quitDriver();
 
-        // ✅ Clean ThreadLocal (VERY IMPORTANT)
+        // ✅ Clean ThreadLocals (VERY IMPORTANT for parallel execution)
         test.remove();
         testData.remove();
         TestLogger.testThread.remove();
